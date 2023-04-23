@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BasicAuth.Pages.RegistrationPage"
+             x:DataType="models:RegistrationModel"
+             xmlns:local="clr-namespace:BasicAuth.Pages" 
+             xmlns:models="clr-namespace:BasicAuth.Models;assembly=BasicAuth"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout Padding="30"
+                         Spacing="20"
+                         BackgroundColor="#ffca7b"
+                         VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="CenterAndExpand">
+                <Image Source="dotnet_bot.png"
+                       HeightRequest="150"
+                       HorizontalOptions="Center" />
+                <Label Text="Register Screen"
+                       FontSize="24"
+                       HorizontalOptions="Center"
+                       TextColor="White" />
+                <Entry Placeholder="Enter email" Text="{Binding Email}"
+                       FontSize="16" />
+                <Entry Placeholder="(123) 456-7890"
+                       Keyboard="Numeric"
+                       FontSize="16"
+                       Text="{Binding PhoneNumber, Mode=TwoWay}" />
+                <Entry Placeholder="Enter password" Text="{Binding Password}"
+                       FontSize="16"
+                       IsPassword="True" />
+                <Entry Placeholder="Confirm password" Text="{Binding ConfirmPassword}"
+                       FontSize="16"
+                       IsPassword="True" />
+                <Button x:Name="btn_register"
+                        Text="Register"
+                        FontSize="20"
+                        BackgroundColor="White"
+                        TextColor="#ffca7b"
+                        BorderColor="#ffca7b"
+                        BorderWidth="2"
+                        Clicked="OnRegisterClicked" />
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center">
+                    <Label Text="Have an account?"
+                           FontSize="16" />
+                    <Label Text="Sign In"
+                           FontSize="16"
+                           TextColor="Blue"
+                           TextDecorations="Underline"
+                           Margin="0,0,0,0"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="StartAndExpand">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnSignInClicked" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+            <local:BusyIndicator x:Name="BusyIndicator" Grid.Row="1"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
