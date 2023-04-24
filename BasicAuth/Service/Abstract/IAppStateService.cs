@@ -10,5 +10,6 @@ namespace BasicAuth.Service.Abstract
         event PropertyChangedEventHandler PropertyChanged;
         IAuthService GetAuthService();
         IUserRepo GetUserRepo();
+        void LockPortaitOrientation(object sender, DisplayInfoChangedEventArgs e);
     }
 }

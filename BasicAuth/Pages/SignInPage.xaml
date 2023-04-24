@@ -1,60 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:BasicAuth.Pages" 
-             x:Class="BasicAuth.Pages.SignInPage"
-             BackgroundColor="White">
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:BasicAuth.Pages"
+    x:Class="BasicAuth.Pages.SignInPage"
+    BackgroundColor="#ffca7b">
     <ContentPage.Content>
-        <Grid >
-            <StackLayout Padding="30"
-                         Spacing="20"
-                         BackgroundColor="#ffca7b"
-                         VerticalOptions="CenterAndExpand"
-                         HorizontalOptions="CenterAndExpand"
-                         Grid.Row="0"
-                         x:Name="mainStackLayout">
-                <Image Source="dotnet_bot.png"
-                       HeightRequest="150"
-                       HorizontalOptions="Center" />
-                <Label Text="Sign In Screen"
-                       FontSize="24"
-                       HorizontalOptions="Center"
-                       TextColor="White" />
-                <Entry Placeholder="(123) 456-7890"
-                       Keyboard="Numeric"
-                       FontSize="16"
-                       Text="{Binding PhoneNumber, Mode=TwoWay}" />
-                <Entry Placeholder="Enter password"
-                       FontSize="16"
-                       IsPassword="True"
-                       Text="{Binding PasswordHash,Mode=TwoWay}" />
-                <Button x:Name="btn_login"
+        <Grid>
+            <Frame
+                BackgroundColor="White"
+                CornerRadius="10"
+                Padding="20"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                HasShadow="true"
+                BorderColor="White">
+                <StackLayout
+                    Spacing="20"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand">
+                    <Image
+                        Source="dotnet_bot.png"
+                        HeightRequest="150"
+                        HorizontalOptions="Center" />
+                    <Label
+                        Text="Sign In Screen"
+                        FontSize="24"
+                        HorizontalOptions="Center"
+                        TextColor="#FF6D00" />
+                    <Frame
+                        Padding="5, 0"
+                        BackgroundColor="White"
+                        CornerRadius="10"
+                        HasShadow="false"
+                        BorderColor="LightGray"
+                        Margin="1.5 ,0">
+                        <Entry
+                            x:Name="PhoneNumberEntry"
+                            Placeholder="(123) 456-7890"
+                            Keyboard="Numeric"
+                            FontSize="16"
+                            Text="{Binding PhoneNumber, Mode=TwoWay}"
+                            BackgroundColor="Transparent"
+                            TextColor="#333333"
+                            ReturnType="Next" />
+                    </Frame>
+                    <Frame
+                        Padding="5, 0"
+                        BackgroundColor="White"
+                        CornerRadius="10"
+                        HasShadow="false"
+                        BorderColor="LightGray"
+                        Margin="1.5 ,0">
+                        <Entry
+                            x:Name="PasswordEntry"
+                            Placeholder="Enter password"
+                            
+                            FontSize="16"
+                            IsPassword="True"
+                            Text="{Binding PasswordHash,Mode=TwoWay}"
+                            BackgroundColor="Transparent"
+                            TextColor="#333333"
+                            ReturnType="Done"/>
+                    </Frame>
+                    <Button
+                        x:Name="btn_login"
                         Text="Log In"
                         FontSize="20"
-                        BackgroundColor="White"
-                        TextColor="#ffca7b"
-                        BorderColor="#ffca7b"
-                        BorderWidth="2"
+                        BackgroundColor="#FF6D00"
+                        TextColor="White"
+                        CornerRadius="10"
                         Clicked="OnLoginClicked" />
-                <StackLayout Orientation="Horizontal"
-                             HorizontalOptions="Center"
-                             VerticalOptions="Center">
-                    <Label Text="Don't have an account?"
-                           FontSize="16" />
-                    <Label Text="Sign Up"
-                           FontSize="16"
-                           TextColor="Blue"
-                           TextDecorations="Underline"
-                           Margin="0,0,0,0"
-                           VerticalOptions="CenterAndExpand"
-                           HorizontalOptions="StartAndExpand">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnSignUpClicked" />
-                        </Label.GestureRecognizers>
-                    </Label>
+                    <StackLayout
+                        Orientation="Horizontal"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center">
+                        <Label
+                            Text="Don't have an account? "
+                            FontSize="16"
+                            TextColor="#333333" />
+                        <Label
+                            Text="Sign Up"
+                            FontSize="16"
+                            TextColor="#FF6D00"
+                            TextDecorations="Underline"
+                            VerticalOptions="CenterAndExpand"
+                            Margin="0,0,0,0"
+                            HorizontalOptions="StartAndExpand">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="OnSignUpClicked" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
                 </StackLayout>
-            </StackLayout>
-            <local:BusyIndicator x:Name="BusyIndicator" Grid.Row="1"/>
+            </Frame>
+            <local:BusyIndicator
+                x:Name="BusyIndicator"
+                Grid.Row="1" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

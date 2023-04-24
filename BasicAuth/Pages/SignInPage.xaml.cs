@@ -1,5 +1,6 @@
 using BasicAuth.DAL.Repo.Abstract;
 using BasicAuth.Models;
+using BasicAuth.Service;
 using BasicAuth.Service.Abstract;
 using System.ComponentModel.DataAnnotations;
 
@@ -19,6 +20,7 @@ namespace BasicAuth.Pages
             _authService = _appStateService.GetAuthService();
             BindingContext = userModel;
             NavigationPage.SetHasNavigationBar(this, false);
+            DeviceDisplay.Current.MainDisplayInfoChanged += _appStateService.LockPortaitOrientation;
         }
 
         private async void OnLoginClicked(object sender, EventArgs e)
@@ -55,16 +57,12 @@ namespace BasicAuth.Pages
 
 
             if (validUser)
-            {
                 await Navigation.PushAsync(new HomePage(_appStateService));
-            }
+            
             else
-            {
                 await DisplayAlert("Authentication", "Authentication failed. Please check your phone number and password.", "OK");
-            }
-
+            
         }
-
 
         private async void OnSignUpClicked(object sender, EventArgs e)
         {

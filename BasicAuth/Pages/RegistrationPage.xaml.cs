@@ -20,6 +20,7 @@ public partial class RegistrationPage : ContentPage
         NavigationPage.SetHasNavigationBar(this, false);
         _appStateService = appStateService;
         _userRepo = _appStateService.GetUserRepo();
+        DeviceDisplay.Current.MainDisplayInfoChanged += _appStateService.LockPortaitOrientation;
     }
 
     private async void OnRegisterClicked(object sender, EventArgs e)

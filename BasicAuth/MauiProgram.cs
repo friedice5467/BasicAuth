@@ -31,7 +31,6 @@ namespace BasicAuth
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddSingleton<IAppStateService, AppStateService>();
 
-
             builder.Services.AddDbContext<IdentityDbContext>(options =>
                 options.UseNpgsql(builder.Configuration.GetConnectionString("IdentityDbConnection")));
 

@@ -8,10 +8,11 @@ namespace BasicAuth.Service
     public class AppStateService : IAppStateService
     {
         private readonly IServiceProvider _serviceProvider;
-
+        private readonly DeviceOrientationService _deviceOrientationService;
         public AppStateService(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
+            _deviceOrientationService = new DeviceOrientationService();
             ShowBusyIndicator();
         }
 
@@ -104,5 +105,19 @@ namespace BasicAuth.Service
                 }
             }
         }
+
+        public void LockPortaitOrientation(object sender, DisplayInfoChangedEventArgs e)
+        {
+            switch (DeviceDisplay.Current.MainDisplayInfo.Orientation)
+            {
+                case DisplayOrientation.Landscape:
+                    _deviceOrientationService.SetDeviceOrientation(DisplayOrientation.Portrait);
+                    break;
+                case DisplayOrientation.Portrait:
+                    _deviceOrientationService.SetDeviceOrientation(DisplayOrientation.Portrait);
+                    break;
+            }
+        }
+
     }
 }
