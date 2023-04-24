@@ -19,7 +19,8 @@ To install and run the **BasicAuth** app, follow these steps:
 2. Open the solution in Visual Studio 2022 Preview
 3. Install the required packages using NuGet Package Manager
 4. Change appsettings.json to your postgres db connection string
-5. Run the app on the Android Emulator
+5. Change the User model to suit your table, and update IdentityDbContext to suit your table name
+6. Run the app on the Android Emulator
 
 ## Usage
 
