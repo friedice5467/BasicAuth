@@ -8,8 +8,8 @@
 - Form Validation
 - Logging in and logging out
 - Saving login state using tokens
-- App state service that takes care of dependencies, as well as a service that can adjust device orientation based on actions (Tested on Android)
-- A popup that notifies users when the app is busy
+- App state service that takes care of dependencies, as well as a service that can adjust device orientation based on actions. 
+- A popup that notifies users when the app is busy, boolean set in appstate
 
 ## Installation
 
@@ -24,7 +24,7 @@ To install and run the **BasicAuth** app, follow these steps:
 
 ## Usage
 
-With its easy-to-use interface, the **BasicAuth** app lets you perform authentication with just a few clicks. After launching the app, simply register a new user, fill out the required details and submit the form. Once the user is registered, you can log in and access the app's main functionalities.
+With it's ease of setup and architecture, you can use this as a starting place for a MAUI app. 
 
 ## Screenshot
 <p align="center">
@@ -32,8 +32,8 @@ With its easy-to-use interface, the **BasicAuth** app lets you perform authentic
 </p>
 
 ## TODO
-Styling 
-Authorization 
+- Styling 
+- Authorization 
 
 ## License
 
