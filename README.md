@@ -27,8 +27,9 @@ To install and run the **BasicAuth** app, follow these steps:
 With its easy-to-use interface, the **BasicAuth** app lets you perform authentication with just a few clicks. After launching the app, simply register a new user, fill out the required details and submit the form. Once the user is registered, you can log in and access the app's main functionalities.
 
 ## Screenshot
-![Untitled](https://user-images.githubusercontent.com/58054670/234140266-d83cbe22-7d2a-465c-b73d-001916e201ca.png)
-
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/58054670/234140266-d83cbe22-7d2a-465c-b73d-001916e201ca.png" alt="BasicAuth Screenshot">
+</p>
 
 ## TODO
 Styling 
