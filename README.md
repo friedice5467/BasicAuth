@@ -31,6 +31,11 @@ Once you've completed these steps, the app should be up and running on your emul
 
 **BasicAuth** is a great choice for developers who want to provide basic login capabilities without spending a lot of time on setup or customization. Whether you're building a mobile app from scratch or adding authentication to an existing app, **BasicAuth** is a simple and effective solution that can help you get the job done quickly and easily.
 
+## Screenshot
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/58054670/234140266-d83cbe22-7d2a-465c-b73d-001916e201ca.png" alt="BasicAuth Screenshot">
+</p>
+
 ## License
 
 This project is licensed under the [MIT License](https://github.com/your-repo-link/blob/main/LICENSE).
