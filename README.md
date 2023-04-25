@@ -1,6 +1,4 @@
-Sure, here's a revised version of your README that highlights the key features and benefits of your BasicAuth app:
-
-# BasicAuth: A Simple Solution for Secure Authentication
+# BasicAuth
 
 **BasicAuth** is a lightweight, user-friendly app for Android that provides basic authentication features, including user registration, form validation, login/logout, and token-based login state management. 
 
