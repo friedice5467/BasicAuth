@@ -8,7 +8,7 @@
 - Form Validation
 - Logging in and logging out
 - Saving login state using tokens
-- App state service that takes care of dependencies
+- App state service that takes care of dependencies, as well as a service that can adjust device orientation based on actions (Tested on Android)
 - A popup that notifies users when the app is busy
 
 ## Installation
